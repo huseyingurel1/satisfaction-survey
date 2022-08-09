@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec ="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:fragment="headerfiles">
+	<meta charset="UTF-8">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--    Fontawesome-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/"><h3>Ecodation</h3> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" sec:authorize="isAuthenticated()">
+				<span class="navbar-toggler-icon">
+
+				</span>
+
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavDarkDropdown" >
+
+				<ul class="navbar-nav ms-auto ">
+<!--					 mb-2 mb-lg-0-->
+					<li class="nav-item">
+						<div class="dropdown" sec:authorize="isAuthenticated()">
+
+							<a class="nav-link dropdown-toggle" role="button" id="navbarDarkDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+								Survey Options
+							</a>
+							<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/}">Survey</a></li>
+								<li><a class="dropdown-item" th:href="@{/score}">Survey Results</a></li>
+							</ul>
+
+						</div>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav navbar-right" sec:authorize="hasRole('ROLE_ADMIN')">
+					<li class="nav-item"><a class="nav-link" th:href="@{/students}">User Management System</a></li>
+				</ul>
+
+				<ul class="navbar-nav navbar-right" sec:authorize="isAuthenticated()">
+					<li class="nav-item" ><a  class="nav-link" th:href="@{/logout}" > Logout <i class="fa fa-sign-out" aria-hidden="true"></i> </a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

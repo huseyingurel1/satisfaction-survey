@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec ="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--    Fontawesome-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<!--		Css		-->
+	<link rel="stylesheet" th:href="@{/css/quizIndex.css}">
+	<title>Home Page</title>
+</head>
+<body>
+	<!-- Importing Navbar	-->
+	<div th:insert="navbar.html :: navbar"></div>
+
+<!--	Main Container-->
+	<div class="main-container container py-4 px-4">
+		<div class="image-box">
+			<img th:src="@{/images/survey1.png}" alt="image">
+		</div>
+		<div class="text-box">
+			<h1 class="mb-5 text-center ">Student Satisfaction Survey</h1>
+
+
+			<form class="card bg-dark py-5 px-4" th:action="@{/quiz}"  method="post" >
+				<p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
+<!--					Princial user email i göstermek için kullandığımız Alternatif Kod-->
+				<!--				<h4  class="text-light" style="text-transform:uppercase"> Name : <span sec:authentication="principal.username"> </span> </h4>-->
+
+				<!--			<h4  class="text-light" style="text-transform:uppercase"> [[${#request.userPrincipal.principal.username}]]  </h4>-->
+				<button type="submit" class="btn btn-info"> Start Survey</button>
+			</form>
+		</div>
+	</div>
+	<!-- Importing Footer	-->
+	<div th:insert="footer.html :: footer"></div>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+	/*background-image:url(https://extension.harvard.edu/wp-content/uploads/sites/8/2020/12/aerial-harvard.jpg) ;*/
+	/*background-size: cover;*/
+	background: linear-gradient(45deg,#e66465, #9198e5);
+}
+
+.main-container {
+	min-height: calc(100vh - 136px);
+	/*200px  =  136px*/
+}
+
+footer {
+	position:fixed;
+	bottom: 0;
+	height: 80px;
+	width: 100%;
+	text-align: center;
+	line-height: 80px;
+}
