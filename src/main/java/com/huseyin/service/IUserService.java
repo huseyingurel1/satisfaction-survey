@@ -13,6 +13,10 @@ public interface IUserService extends UserDetailsService {
 
     List<User> getAllUsers();
 
+    User getUserById(Long id);
+
+    User updateUser(User user);
+
 
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Component
 @Data
@@ -48,15 +49,17 @@ public class User {
     private Collection<Role> roles ;
 
 
-    public User(String firstName, String lastName, String email, String password, boolean canEnterSurvey, Collection<Role> roles) {
+    public User(String firstName, String lastName, String email, String password, boolean canEnterSurvey, boolean isActive, Collection<Role> roles) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.canEnterSurvey = canEnterSurvey;
+        this.isActive = isActive;
         this.roles = roles;
     }
+
 
 
 }

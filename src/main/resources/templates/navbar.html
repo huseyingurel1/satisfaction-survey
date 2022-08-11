@@ -41,13 +41,16 @@
 				</ul>
 
 				<ul class="navbar-nav navbar-right" sec:authorize="hasRole('ROLE_ADMIN')">
-					<li class="nav-item"><a class="nav-link" th:href="@{/students}">User Management System</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/users}">User Management System</a></li>
 				</ul>
 
 				<ul class="navbar-nav navbar-right" sec:authorize="isAuthenticated()">
 					<li class="nav-item" ><a  class="nav-link" th:href="@{/logout}" > Logout <i class="fa fa-sign-out" aria-hidden="true"></i> </a></li>
 				</ul>
 			</div>
+
+
+
 		</div>
 	</nav>
 

@@ -23,8 +23,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements IUserService {
-
-
     private UserRepository userRepository;
 
     @Autowired
@@ -36,7 +34,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User save(UserRegistrationDto registrationDto) {
+    public User save(UserRegistrationDto registrationDto){
 
         User user = new User(
                 registrationDto.getFirstName(),
@@ -44,6 +42,7 @@ public class UserServiceImpl implements IUserService {
                 registrationDto.getEmail(),
                 passwordEncoder.encode(registrationDto.getPassword()),
                 registrationDto.isCanEnterSurvey(),
+                registrationDto.isActive(),
                 Arrays.asList(new Role("ROLE_USER")));
 
         return userRepository.save(user);
@@ -55,19 +54,54 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public User getUserById(Long id) {
+
+        return userRepository.findById(id).get();
+    }
+
+
+    @Override
+    public User updateUser(User user) {
+
+        return userRepository.save(user);
+    }
+
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//
+//        User user = userRepository.findByEmail(username);
+//
+//        if( user == null ){
+//            throw new UsernameNotFoundException("Invalid username or password.");
+//        }
+//
+//        // Email = username
+//        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),mapRolesToAuthorities(user.getRoles()));
+//
+//        // FirstName == username
+//        //return new org.springframework.security.core.userdetails.User(user.getFirstName() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
+//    }
+
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userRepository.findByEmail(username);
 
         if( user == null ){
             throw new UsernameNotFoundException("Invalid username or password.");
+        }else{
+
+            if(user.isActive()){
+                // Email = username
+                return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),mapRolesToAuthorities(user.getRoles()));
+                // FirstName == username
+                //return new org.springframework.security.core.userdetails.User(user.getFirstName() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
+            }else{
+
+                throw new UsernameNotFoundException("User Blocked by Admin");
+
+            }
         }
-
-        // Email = username
-        return new org.springframework.security.core.userdetails.User(user.getEmail() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
-
-        // FirstName == username
-        //return new org.springframework.security.core.userdetails.User(user.getFirstName() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
     }
 
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles ){

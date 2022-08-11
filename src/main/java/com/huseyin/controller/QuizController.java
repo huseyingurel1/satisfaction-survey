@@ -121,17 +121,27 @@ public class QuizController {
                     // Email Gönderme İşlemi
                     emailService.sendEmail(principal);
 
-                    // İknci girişi engelleme
-                    currentUser.setCanEnterSurvey(false);
-                    userRepository.save(currentUser);
+                    if(principal.getName() == "admin"){
 
-                    submitted = true;
+                        submitted = true;
+                        return "result";
+
+                    }else{
+
+                        // İknci girişi engelleme
+                        currentUser.setCanEnterSurvey(false);
+                        userRepository.save(currentUser);
+
+                        submitted = true;
+                        return "result";
+                    }
+
 
             }
             return "result";
 
         }catch(Exception e){
-            return "logib";
+            return "login";
         }
     }
 

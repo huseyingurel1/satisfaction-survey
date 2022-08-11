@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {
@@ -34,8 +35,17 @@ public class UserRegistrationController {
 
     @PostMapping
     public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto ){
-        iUserService.save(registrationDto);
-        return "redirect:/registration?success";
+
+        try {
+
+            iUserService.save(registrationDto);
+
+            return "redirect:/registration?success";
+
+        }catch (Exception e){
+
+            return "redirect:/registration?error";
+        }
     }
 
 }

@@ -13,4 +13,6 @@ public class UserRegistrationDto {
     private String email;
     private String password;
     private boolean canEnterSurvey = true;
+    private boolean isActive = true;
+
 }
