@@ -40,23 +40,18 @@
                     </label>
                     <input id="firstName" class="form-control" th:field="*{firstName}" required autofocus="autofocus" />
                 </div>
-
                 <div class="form-group">
                     <label class="control-label" for="lastName">
                         Last Name
                     </label>
                     <input id="lastName" class="form-control" th:field="*{lastName}" required autofocus="autofocus" />
                 </div>
-
                 <div class="form-group">
                     <label class="control-label" for="email">
                         Email
                     </label>
                     <input type="email" id="email" class="form-control" th:field="*{email}" required autofocus="autofocus" />
                 </div>
-
-                <br>
-
                 <div class="form-group">
                     <label class="control-label" for="password">
                         Password
@@ -64,11 +59,8 @@
                     <input id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus" />
                 </div>
 
-                <br>
-
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Register</button>
-
                     <span>Already registered ?<a href="/" th:href="@{/login}">Login here
                     </a> </span>
                 </div>
