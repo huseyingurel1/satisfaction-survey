@@ -65,12 +65,12 @@
 				<p>If you have any suggestions or complaints, please share them with us.</p>
 <!--				<input type="text" th:name="message" rows="4" cols="100"/>-->
 
-				<textarea minlength="15" maxlength="250" type="text" th:name="message" th:rows="4" cols="100" placeholder="Enter your Message" required="required"></textarea>
+				<textarea minlength="15" maxlength="240" type="text" th:name="message" th:rows="4" cols="100" placeholder="Enter your Message" required="required"></textarea>
 				<p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
 			</div>
 
 
-			<button type="submit" class="btn btn-info d-block mx-auto mt-4"> Submit Answer</button>
+			<button type="submit" class="btn btn-info d-block mx-auto mt-4" onchange="disabled()"> Submit Answer</button>
 		</form>
 	</div>
 
