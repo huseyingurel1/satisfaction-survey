@@ -55,7 +55,7 @@ public class EmailServiceImpl implements EmailService {
             message.setFrom("huseyingurel27@gmail.com");
             message.setTo(principal.getName());
             message.setSubject("Survey Results");
-            message.setText("Your Satisfaction Status :  " + result.getSatisfaction() +
+            message.setText("Dear  "+result1.getUsername()+"\n"+
                     "\n" +
                     " \n Thank you for taking the time to complete this survey.\n " +
                     "We truly value the information you have provided.\n" +

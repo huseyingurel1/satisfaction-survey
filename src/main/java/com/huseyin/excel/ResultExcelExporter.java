@@ -57,7 +57,7 @@ public class ResultExcelExporter {
         style.setFont(font);
         style.setAlignment(HorizontalAlignment.CENTER);
         createCell(row,0,"Result Information",style);
-        sheet.addMergedRegion(new CellRangeAddress(0,0,0,5));
+        sheet.addMergedRegion(new CellRangeAddress(0,0,0,4));
         font.setFontHeightInPoints((short) (10));
 
         row=sheet.createRow(1);
@@ -65,11 +65,11 @@ public class ResultExcelExporter {
         font.setFontHeight(16);
         style.setFont(font);
         createCell(row,0,"Result Id",style);
-        createCell(row,1,"Username  ",style);
-        createCell(row,2,"Email                     ",style);
-        createCell(row,3,"TotalCorrect",style);
-        createCell(row,4,"Satisfaction     ",style);
-        createCell(row,5,"Message                               ",style);
+        createCell(row,1,"  Username  ",style);
+        createCell(row,2,"        Email       ",style);
+//        createCell(row,3,"TotalCorrect",style);
+        createCell(row,3,"   Satisfaction    ",style);
+        createCell(row,4,"      Message                               ",style);
 
 
 
@@ -91,7 +91,7 @@ public class ResultExcelExporter {
             createCell(row, columnCount++, result.getId(),style);
             createCell(row, columnCount++, result.getUsername(),style);
             createCell(row, columnCount++, result.getEmail(),style);
-            createCell(row, columnCount++, result.getTotalCorrect(),style);
+//            createCell(row, columnCount++, result.getTotalCorrect(),style);
             createCell(row, columnCount++, result.getSatisfaction(),style);
             createCell(row, columnCount++, result.getMessage(),style);
 
