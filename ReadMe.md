@@ -21,10 +21,10 @@ After confirming the survey, an automatic message is sent to the administrator's
 The admin can update the status of users actively or passively.
 Users who are passive cannot log in to the system.
 
-##H2Console
+## H2Console
 You can check all saved information from http://localhost:8080/h2-console
 
-##Used Technologies
+## Used Technologies
 
 - Java
 - SpringBoot
