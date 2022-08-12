@@ -39,6 +39,5 @@ You can check all saved information from http://localhost:8080/h2-console
 
 ## Developers of project
 
-Hüseyin Gürel
-Isa Kayabasi  --> https://github.com/ISA-KAYABASI
-Test Specialist Erdem Yilmaz
+- Hüseyin Gürel
+- Isa Kayabasi  --> https://github.com/ISA-KAYABASI
