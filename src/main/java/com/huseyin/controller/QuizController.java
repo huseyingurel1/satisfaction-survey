@@ -121,10 +121,9 @@ public class QuizController {
                     // Email Gönderme İşlemi
                     emailService.sendEmail(principal);
 
-                    submitted = true;
-
                     if(principal.getName() == "admin"){
 
+                        submitted = true;
                         return "result";
 
                     }else{
@@ -132,6 +131,8 @@ public class QuizController {
                         // İknci girişi engelleme
                         currentUser.setCanEnterSurvey(false);
                         userRepository.save(currentUser);
+
+                        submitted = true;
                         return "result";
                     }
 
