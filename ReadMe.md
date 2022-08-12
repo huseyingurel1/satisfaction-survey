@@ -7,7 +7,7 @@ What Users Can Do:
 
 Users have the right to participate in the survey only once (they cannot enter it a second time.) 
 After confirming the survey, an automatic message is sent to the user's email address.
-Users can see the survey result table and download it in excel format.
+Users can see the survey result table and download it in Excel format.
 
 What Admin Can Do:
 
