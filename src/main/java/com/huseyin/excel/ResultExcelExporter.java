@@ -67,7 +67,6 @@ public class ResultExcelExporter {
         createCell(row,0,"Result Id",style);
         createCell(row,1,"  Username  ",style);
         createCell(row,2,"        Email       ",style);
-//        createCell(row,3,"TotalCorrect",style);
         createCell(row,3,"   Satisfaction    ",style);
         createCell(row,4,"      Message                               ",style);
 
@@ -91,7 +90,6 @@ public class ResultExcelExporter {
             createCell(row, columnCount++, result.getId(),style);
             createCell(row, columnCount++, result.getUsername(),style);
             createCell(row, columnCount++, result.getEmail(),style);
-//            createCell(row, columnCount++, result.getTotalCorrect(),style);
             createCell(row, columnCount++, result.getSatisfaction(),style);
             createCell(row, columnCount++, result.getMessage(),style);
 

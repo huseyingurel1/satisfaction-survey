@@ -3,7 +3,6 @@ package com.huseyin.service.impl;
 import com.huseyin.model.Question;
 import com.huseyin.model.QuestionForm;
 import com.huseyin.model.Result;
-import com.huseyin.model.User;
 import com.huseyin.repository.ResultRepo;
 import com.huseyin.service.ResultService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,16 +95,17 @@ public class ResultServiceImpl implements ResultService {
 
 
         if(average<=1){
-            result1 = "Hic memnun degil" ;
+            result1 = "Not Satisfied at All" ;
         } else if (average==2) {
-            result1 = "Memnun degil";
+            result1 = "Not Glad";
         }else if (average==3) {
-            result1 = "Kısmen memnun";
+            result1 = "Partly Satisfied";
         }else if (average==4) {
-            result1 = "Memnun";
+            result1 = "Satisfied";
         }else if (average==5){
-            result1 = "Cok memnun";
+            result1 = "Very Satisfied";
         }
+
         return result1;
     }
 

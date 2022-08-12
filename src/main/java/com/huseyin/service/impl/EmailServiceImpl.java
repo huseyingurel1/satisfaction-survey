@@ -60,7 +60,10 @@ public class EmailServiceImpl implements EmailService {
                     " \n Thank you for taking the time to complete this survey.\n " +
                     "We truly value the information you have provided.\n" +
                     " Your responses will contribute to our analyses of the \n " +
-                    "texts and suggest new lines of approach to the corpus data."
+                    "texts and suggest new lines of approach to the corpus data."+
+                    "\n"+
+                    "\n"+" Best Regards "+
+                    "\n"+"Java Developer Hüseyin Gürel"
             );
 
             javaMailSender.send(message);
