@@ -1,8 +1,9 @@
 # Base image
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-alpine
 
 # Uygulama dosyalarını konteynere kopyala
-COPY target/satisfaction-survey.jar /app.jar
+COPY target/*.jar /app.jar
 
 # Uygulamayı çalıştır
 CMD ["java", "-jar", "/app.jar"]
+
