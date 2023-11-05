@@ -1,4 +1,4 @@
-FROM maven:3.6.3-openjdk-slim as BUILDER
+FROM maven:3.6.3-openjdk-11-slim as BUILDER
 ARG VERSION=0.0.1-SNAPSHOT
 WORKDIR /build/
 COPY pom.xml /build/
