@@ -5,7 +5,7 @@ COPY pom.xml /build/
 COPY src /build/src/
 
 RUN mvn clean package 
-COPY target/Satisfaction-Survey-${VERSION}.jar target/application.jar
+COPY target/satisfaction-survey-${VERSION}.jar target/application.jar
 
 # Base image
 #FROM openjdk:17-jdk-alpine
