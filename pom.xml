@@ -132,7 +132,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>satisfaction-survey-exe</finalName>
     </build>
 
 </project>
